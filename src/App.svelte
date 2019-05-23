@@ -39,6 +39,9 @@
 </script>
 
 <svelte:window bind:scrollY={y} />
+<svelte:head>
+  <title>Test app</title>
+</svelte:head>
 <button on:click={toggle}>Toggle</button>
 
 <svelte:component
