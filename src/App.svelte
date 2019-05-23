@@ -3,6 +3,9 @@
   import CartItem from "./CartItem.svelte";
   import FamilyNode from "./FamilyNode.svelte";
 
+  let y;
+
+  $: console.log(y);
   let familyStructure = [
     {
       isParent: true,
@@ -35,6 +38,7 @@
   }
 </script>
 
+<svelte:window bind:scrollY={y} />
 <button on:click={toggle}>Toggle</button>
 
 <svelte:component
@@ -42,6 +46,21 @@
   title={renderedComponent === CartItem ? 'Another product' : 'Test product'}
   id="p1" />
 
+{#each familyStructure as familyMember}
+  <FamilyNode member={familyMember} />
+{/each}
+{#each familyStructure as familyMember}
+  <FamilyNode member={familyMember} />
+{/each}
+{#each familyStructure as familyMember}
+  <FamilyNode member={familyMember} />
+{/each}
+{#each familyStructure as familyMember}
+  <FamilyNode member={familyMember} />
+{/each}
+{#each familyStructure as familyMember}
+  <FamilyNode member={familyMember} />
+{/each}
 {#each familyStructure as familyMember}
   <FamilyNode member={familyMember} />
 {/each}
